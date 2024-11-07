@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নিউজ পোর্টাল</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .carousel-item {
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-900">
+    <!-- Header -->
+ <header class="bg-blue-800 text-white py-4 sticky top-0 z-50">
+    <div class="container mx-auto flex flex-wrap justify-between items-center px-4 md:px-0">
+        <!-- Logo/Title -->
+        <h1 class="text-3xl font-bold text-center md:text-left w-full md:w-auto">নিউজ পোর্টাল</h1>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="md:hidden block text-white focus:outline-none" onclick="toggleMenu()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav id="nav-menu" class="w-full md:w-auto hidden md:flex justify-center md:justify-start mt-2 md:mt-0">
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-8 text-sm md:text-base text-center md:text-left">
+                <li><a href="#" class="hover:underline">প্রচ্ছদ</a></li>
+                <li><a href="#" class="hover:underline">জাতীয়</a></li>
+                <li><a href="#" class="hover:underline">আন্তর্জাতিক</a></li>
+                <li><a href="#" class="hover:underline">খেলাধুলা</a></li>
+                <li><a href="#" class="hover:underline">বিনোদন</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 my-8 px-4">
+        <!-- Carousel Section (Left Column) -->
+       <div class="col-span-12 md:col-span-8">
+    <div class="relative">
+        <div class="carousel-item overflow-hidden relative">
+            <div class="flex transition-transform duration-500 ease-in-out" id="carouselItems" style="transform: translateX(0);">
+                <div class="w-full flex-shrink-0">
+                    <img src="https://c8.alamy.com/comp/2F5B25X/mass-media-modern-line-design-style-web-banners-with-copy-space-for-text-carousel-posts-with-a-journalist-radio-newspaper-and-online-channel-liv-2F5B25X.jpg" class="w-full h-auto" alt="News Image 1" loading="lazy">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="https://c8.alamy.com/comp/2F5B25X/mass-media-modern-line-design-style-web-banners-with-copy-space-for-text-carousel-posts-with-a-journalist-radio-newspaper-and-online-channel-liv-2F5B25X.jpg" class="w-full h-auto" alt="News Image 2" loading="lazy">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="https://c8.alamy.com/comp/2F5B25X/mass-media-modern-line-design-style-web-banners-with-copy-space-for-text-carousel-posts-with-a-journalist-radio-newspaper-and-online-channel-liv-2F5B25X.jpg" class="w-full h-auto" alt="News Image 3" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-blue-800 text-white p-2 rounded-full md:text-xl" aria-label="Previous Slide">
+                &#10094;
+            </button>
+            <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-blue-800 text-white p-2 rounded-full md:text-xl" aria-label="Next Slide">
+                &#10095;
+            </button>
+        </div>
+    </div>
+</div>
+
+        <!-- Sidebar (Right Column) -->
+        <aside class="col-span-12 md:col-span-4 space-y-8">
+            <section class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold">জনপ্রিয় খবর</h3>
+                <ul class="mt-4 space-y-4">
+                    <li><a href="#" class="text-blue-500 hover:underline">বাংলাদেশে নতুন করোনা সংক্রমণ</a></li>
+                    <li><a href="#" class="text-blue-500 hover:underline">ঢাকা বিশ্ববিদ্যালয়ে ভর্তি পরীক্ষা বাতিল</a></li>
+                    <li><a href="#" class="text-blue-500 hover:underline">ভারত-পাকিস্তান সীমান্তে উত্তেজনা</a></li>
+                    <li><a href="#" class="text-blue-500 hover:underline">অবশেষে মুক্তি পেল নতুন সিনেমা</a></li>
+                </ul>
+            </section>
+        </aside>
+        
+        <!-- News List Section (Main Column) -->
+        <main class="col-span-12 md:col-span-8 space-y-8">
+            <section class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold">বিভিন্ন গুরুত্বপূর্ণ খবর</h2>
+                
+                <!-- News List -->
+                <div class="mt-4 space-y-6">
+                    <article class="border-b pb-6">
+                        <h3 class="text-xl font-semibold">বাংলাদেশে ৫০ বছর পূর্তি উদযাপন</h3>
+                        <p class="mt-2 text-lg">আজ থেকে ৫০ বছর আগে বাংলাদেশ স্বাধীনতা লাভ করে। দেশের ইতিহাসে এটি একটি অত্যন্ত গর্বের মুহূর্ত...</p>
+                        <a href="#" class="text-blue-500 mt-4 block">আরও পড়ুন →</a>
+                    </article>
+
+                    <article class="border-b pb-6">
+                        <h3 class="text-xl font-semibold">বিশ্ববিদ্যালয় ভর্তি পরীক্ষা ২০২৪</h3>
+                        <p class="mt-2 text-lg">বাংলাদেশের সকল বিশ্ববিদ্যালয়ে ভর্তি পরীক্ষার তারিখ ঘোষণা করা হয়েছে। ভর্তি পরীক্ষার প্রস্তুতি নিয়ে বিশেষ প্রতিবেদন...</p>
+                        <a href="#" class="text-blue-500 mt-4 block">আরও পড়ুন →</a>
+                    </article>
+
+                    <article class="border-b pb-6">
+                        <h3 class="text-xl font-semibold">করোনা ভাইরাসের নতুন প্রকোপ</h3>
+                        <p class="mt-2 text-lg">করোনা ভাইরাসের নতুন ধরন বাংলাদেশে দ্রুত ছড়িয়ে পড়ছে। সরকার নতুন পদক্ষেপ গ্রহণ করেছে...</p>
+                        <a href="#" class="text-blue-500 mt-4 block">আরও পড়ুন →</a>
+                    </article>
+
+                    <article class="border-b pb-6">
+                        <h3 class="text-xl font-semibold">বাংলাদেশে বন্যার পরিস্থিতি</h3>
+                        <p class="mt-2 text-lg">দেশের বিভিন্ন অঞ্চলে বন্যার কারণে ব্যাপক ক্ষয়ক্ষতি হচ্ছে। বিশেষ প্রতিবেদন...</p>
+                        <a href="#" class="text-blue-500 mt-4 block">আরও পড়ুন →</a>
+                    </article>
+
+                    <article class="border-b pb-6">
+                        <h3 class="text-xl font-semibold">ঢাকা শহরে ট্রাফিক সমস্যার সমাধান</h3>
+                        <p class="mt-2 text-lg">ঢাকা শহরের যানজট নিয়ন্ত্রণে নতুন পদক্ষেপ গ্রহণের পরিকল্পনা করেছে সরকার। বিস্তারিত...</p>
+                        <a href="#" class="text-blue-500 mt-4 block">আরও পড়ুন →</a>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <main class="col-span-12 md:col-span-4 space-y-8">
+            <section class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold">বিজ্ঞাপন</h3>
+                <img src="https://via.placeholder.com/300x250" alt="Advertisement" class="w-full mt-4" loading="lazy">
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>© ২০২৪ নিউজ পোর্টাল. সমস্ত অধিকার সংরক্ষিত।</p>
+            <p class="mt-2">আমাদের সাথে যোগাযোগ করুন: <a href="mailto:info@newsportal.com" class="underline">info@newsportal.com</a></p>
+        </div>
+    </footer>
+<script>
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("hidden");
+}
+
+
+let currentIndex = 0;
+const carouselItems = document.getElementById('carouselItems');
+const totalSlides = carouselItems.children.length;
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentIndex < totalSlides - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateCarousel();
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = totalSlides - 1;
+    }
+    updateCarousel();
+});
+
+function updateCarousel() {
+    const translateXValue = -currentIndex * 100;
+    carouselItems.style.transform = `translateX(${translateXValue}%)`;
+}
+    </script>
+</body>
+</html>
